@@ -14,6 +14,8 @@ public class Main {
         pessoas.remove(0);
         pessoas.remove(new Pessoa("111.111.111-01", "João"));
 
+        pessoas.set(0, new Pessoa("555.555.555-05", "José"));
+
         System.out.println(pessoas);
 
     }
