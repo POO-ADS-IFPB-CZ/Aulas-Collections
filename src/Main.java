@@ -1,22 +1,19 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        Queue<Pessoa> fila = new LinkedList<>();
+        Set<Pessoa> conjunto = new HashSet<>();
 
-        fila.offer(new Pessoa("111.111.111-01", "João"));
-        fila.offer(new Pessoa("222.222.222-02", "Maria"));
-        fila.offer(new Pessoa("333.333.333-03", "Pedro"));
+        conjunto.add(new Pessoa("222.222.222-02", "Maria"));
+        conjunto.add(new Pessoa("333.333.333-03", "Pedro"));
+        conjunto.add(new Pessoa("111.111.111-01", "João"));
 
-        //Retorna mas não remove
-        System.out.println("Próximo da fila"+fila.peek());
+        //Não pode ter repetição - Retorna false.
+        conjunto.add(new Pessoa("111.111.111-01", "João"));
 
-        System.out.println(fila.poll());
-
-        System.out.println(fila);
+        System.out.println(conjunto.contains(
+                new Pessoa("111.111.111-01", "João")));
 
     }
 }
