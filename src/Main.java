@@ -3,19 +3,22 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        Fila fila = new Fila();
+        List<String> nomes = new ArrayList<>();
+        nomes.add("João");
+        nomes.add("Maria");
+        nomes.add("Pedro");
+        nomes.add("Ana");
 
-        fila.adicionar(new Ficha());
-        fila.adicionar(new Ficha());
-        fila.adicionar(new Ficha());
-        fila.adicionar(new Ficha());
-        fila.adicionar(new Ficha());
+        System.out.println(Collections.frequency(nomes, "João"));
+        Collections.shuffle(nomes);
+        System.out.println(nomes);
+        Collections.sort(nomes);
+        System.out.println(nomes);
+//        Collections.fill(nomes, "Teste");
+//        System.out.println(nomes);
 
-        System.out.println(fila.verProximo());
-
-        System.out.println(fila.chamarProximo());
-        System.out.println(fila.chamarProximo());
-        System.out.println(fila.chamarProximo());
+        System.out.println(Collections.min(nomes));
+        System.out.println(Collections.max(nomes));
 
     }
 }
