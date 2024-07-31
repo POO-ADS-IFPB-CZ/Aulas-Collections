@@ -1,36 +1,22 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<Pessoa> pessoas = new ArrayList<>();
+        Queue<Pessoa> fila = new LinkedList<>();
 
-        //CREATE
-        pessoas.add(new Pessoa("111.111.111-01", "João"));
-        pessoas.add(new Pessoa("222.222.222-02", "Maria"));
-        pessoas.add(0, new Pessoa("333.333.333-03", "Pedro"));
-        pessoas.add(3, new Pessoa("444.444.444-04", "Ana"));
+        fila.offer(new Pessoa("111.111.111-01", "João"));
+        fila.offer(new Pessoa("222.222.222-02", "Maria"));
+        fila.offer(new Pessoa("333.333.333-03", "Pedro"));
 
-        //DELETE
-//        pessoas.remove(0);
-//        pessoas.remove(new Pessoa("111.111.111-01", "João"));
+        //Retorna mas não remove
+        System.out.println("Próximo da fila"+fila.peek());
 
-        //UPDATE
-        pessoas.set(0, new Pessoa("555.555.555-05", "José"));
+        System.out.println(fila.poll());
 
-        //READ
-        System.out.println(pessoas);
-
-        //Retornando de um índice específico
-        for(int i=0; i<pessoas.size(); i++){
-            System.out.println(pessoas.get(i));
-        }
-
-        //Usando o for aprimorado
-        for(Pessoa p : pessoas){
-            System.out.println(p);
-        }
+        System.out.println(fila);
 
     }
 }
